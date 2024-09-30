@@ -4,7 +4,7 @@ import ViteExpress from "vite-express";
 const app = express();
 
 let appdata = [
-  { name:'Piper', cookie:'chocolate chip', icecream:'vanilla', other:''}
+  { name:'Piper', cookie:'chocolate chip', icecream:'vanilla', other:'something else'}
 ]
 
 app.use( express.static( 'dist' ) )

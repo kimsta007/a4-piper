@@ -6,7 +6,7 @@ function App() {
   const [cookie, setCookie] = useState('')
   const [icecream, setIcecream] = useState('')
   const [other, setOther] = useState('')
-  let [appData, setAppData] = useState([]);
+  const [appData, setAppData] = useState([]);
 
   const submit = async function( event ) {
     event.preventDefault()
@@ -20,7 +20,7 @@ function App() {
         body
     })
     const data = await response.json()
-    console.log(data)
+    setAppData(data)
   }
 
   return (
