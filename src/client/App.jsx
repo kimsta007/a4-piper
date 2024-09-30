@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
@@ -22,6 +22,17 @@ function App() {
     const data = await response.json()
     setAppData(data)
   }
+
+  useEffect(() => {
+    async function fetchData(){
+      const response = await fetch('/read', {
+      method:'GET'
+    })
+    const data = await response.json()
+    setAppData(data)
+    }
+    fetchData()
+  }, [])
 
   return (
     <div className="App">
